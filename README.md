@@ -1,5 +1,17 @@
 # JobBoard
- 
+A job board web application that allows you to sort by key details (experience, skills, remote(wip))
+## Technologies Used
+- Spring boot
+- Java 17
+- H2
+- Postman (for testing endpoints)
+
+## Useage
+1. Clone repo to a directory of your choosing.
+2. Open with your favorite ide.
+3. Run main method within the JobBoardApplication class file.
+4. Use localhost:8080
+
 ## Functions so far
 
 - Add Job
