@@ -17,12 +17,19 @@ public class JobServiceImpl implements JobService{
 
     @Override
     public Job post(Job job) {
-        //TODO: Job validation
-        return jobRepo.save(job);
+        if (job != null)
+            return jobRepo.save(job);
+        else
+            return null;
     }
 
     @Override
     public List<Job> getJobsByExp(Integer years) {
         return jobRepo.findByYears(years);
+    }
+
+    @Override
+    public List<Job> getJobsByLocation(String location) {
+        return jobRepo.findByLocation(location);
     }
 }

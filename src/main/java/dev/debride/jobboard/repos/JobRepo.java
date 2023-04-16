@@ -12,4 +12,6 @@ import java.util.List;
 public interface JobRepo extends CrudRepository<Job, Integer> {
 
         List<Job> findByYears(Integer years);
+
+        List<Job> findByLocation(String location);
 }

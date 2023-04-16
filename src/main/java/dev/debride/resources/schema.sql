@@ -6,6 +6,7 @@ create table jobs (
 	title varchar,
 	role varchar,
 	details varchar,
+	location varchar,
 	years integer,
 	minimum decimal,
 	maximum decimal,

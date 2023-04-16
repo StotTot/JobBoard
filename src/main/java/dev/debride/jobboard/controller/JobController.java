@@ -39,10 +39,19 @@ public class JobController {
         return ResponseEntity.status(200).body(jobList);
     }
 
-    @GetMapping("/jobs/{years}")
+    @GetMapping("/jobs/exp/{years}")
     public ResponseEntity<List<JobDTO>> getJobsByExp(@PathVariable int years) {
         List<JobDTO> jobList = new ArrayList<>();
         List<Job> jobs = new ArrayList<>(jobRepo.findByYears(years));
+        for (Job j : jobs)
+            jobList.add(new JobDTO(j));
+        return ResponseEntity.status(200).body(jobList);
+    }
+
+    @GetMapping("/jobs/location/{location}")
+    public ResponseEntity<List<JobDTO>> getJobsByLocation(@PathVariable String location) {
+        List<JobDTO> jobList = new ArrayList<>();
+        List<Job> jobs = new ArrayList<>(jobRepo.findByLocation(location));
         for (Job j : jobs)
             jobList.add(new JobDTO(j));
         return ResponseEntity.status(200).body(jobList);

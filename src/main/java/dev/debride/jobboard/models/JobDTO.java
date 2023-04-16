@@ -12,6 +12,8 @@ public class JobDTO {
 
     private String details;
 
+    private String location;
+
     private Integer years;
 
     private Double minimum;
@@ -28,6 +30,7 @@ public class JobDTO {
         this.title = job.getTitle();
         this.role = job.getRole();
         this.details = job.getDetails();
+        this.location = job.getLocation();
         this.years = job.getYears();
         this.minimum = job.getMinimum();
         this.maximum = job.getMaximum();
@@ -41,11 +44,12 @@ public class JobDTO {
     @Override
     public String toString() {
         return "JobDTO{" +
-                "job_id=" + jobId +
+                "jobId=" + jobId +
                 ", company='" + company + '\'' +
                 ", title='" + title + '\'' +
                 ", role='" + role + '\'' +
                 ", details='" + details + '\'' +
+                ", location='" + location + '\'' +
                 ", years=" + years +
                 ", minimum=" + minimum +
                 ", maximum=" + maximum +
@@ -92,6 +96,14 @@ public class JobDTO {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public Integer getYears() {

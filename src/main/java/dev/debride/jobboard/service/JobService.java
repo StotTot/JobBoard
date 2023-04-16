@@ -7,4 +7,5 @@ import java.util.List;
 public interface JobService {
     public Job post(Job job);
     public List<Job> getJobsByExp(Integer years);
+    public List<Job> getJobsByLocation(String location);
 }

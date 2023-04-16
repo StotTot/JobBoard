@@ -19,6 +19,8 @@ public class Job {
     @Column(name = "details")
     private String details;
 
+    @Column(name = "location")
+    private String location;
     @Column(name = "years")
     private Integer years;
     @Column(name = "minimum")
@@ -30,12 +32,13 @@ public class Job {
     @Column(name = "url")
     private String url;
 
-    public Job(Integer job_id, String company, String title, String role, String details, Integer years, Double minimum, Double maximum, Long postedDate, String url) {
+    public Job(Integer job_id, String company, String title, String role, String details, String location, Integer years, Double minimum, Double maximum, Long postedDate, String url) {
         this.jobId = job_id;
         this.company = company;
         this.title = title;
         this.role = role;
         this.details = details;
+        this.location = location;
         this.years = years;
         this.minimum = minimum;
         this.maximum = maximum;
@@ -49,11 +52,12 @@ public class Job {
     @Override
     public String toString() {
         return "Job{" +
-                "job_id=" + jobId +
+                "jobId=" + jobId +
                 ", company='" + company + '\'' +
                 ", title='" + title + '\'' +
                 ", role='" + role + '\'' +
                 ", details='" + details + '\'' +
+                ", location='" + location + '\'' +
                 ", years=" + years +
                 ", minimum=" + minimum +
                 ", maximum=" + maximum +
@@ -100,6 +104,14 @@ public class Job {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public Integer getYears() {
